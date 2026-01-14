@@ -1,0 +1,7 @@
+Incorrect username/password.
+validated text successfully
+validated text successfully
+logged in successfully
+iphone X
+Samsung Note 8
+[ 'iphone X', 'Samsung Note 8', 'Nokia Edge', 'Blackberry' ]
