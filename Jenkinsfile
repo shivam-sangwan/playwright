@@ -35,7 +35,7 @@ def call(Map config = [:]) {               //to make this file as callable from 
 
     //defining environmnet variables...alternative of .env file of local
     environment {     //variables defined under environment can be used anywhere in this file..ye variables hi process.Env ke through pyawright.config m jate h
-        TEST_ENV = "${params.ENV}"    //parameters se ENV ki value(ex: uat) utha kr TEST_ENV variable ko assign krna
+        TEST_ENV = "${params.ENV}"    //parameters se ENV ki value(ex: uat) utha kr TEST_ENV variable ko assign krna..ye TAST_ENV jenkins level variable h..node.js iski value automatically process.env.TEST_ENV ko deta h
         WORKERS = "${params.WORKERS}"
         HEADLESS = 'true'
         CI = 'true'

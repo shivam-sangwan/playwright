@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';
+const {test,expect} =  require('@playwright/test');
 
 
 test.describe.configure({ mode: 'parallel' }); //now all the test of this file will run in || (by default test cases run in sequantional manner)..
