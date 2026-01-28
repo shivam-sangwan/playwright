@@ -33,8 +33,8 @@ def call(Map config = [:]) {               //to make this file as callable from 
         )
     }
 
-    //defining environmnet variables...alternative of .env file of local
-    environment {     //variables defined under environment can be used anywhere in this file..ye variables hi process.Env ke through pyawright.config m jate h
+    //setting up environmnet variables(Proccess.env.TEST_ENV)...alternative of .env file of local
+    environment {     //ye variables hi process.Env ke through pyawright.config m jate h
         TEST_ENV = "${params.ENV}"    //parameters se ENV ki value(ex: uat) utha kr TEST_ENV variable ko assign krna..ye TAST_ENV jenkins level variable h..node.js iski value automatically process.env.TEST_ENV ko deta h
         WORKERS = "${params.WORKERS}"
         HEADLESS = 'true'
@@ -57,6 +57,7 @@ def call(Map config = [:]) {               //to make this file as callable from 
         // Jenkins test reports, All builds of application are also stored in Artifactory
         // In short, Artifactory stores all application-related artifacts and dependencies in a centralized and controlled way
         
+        //Note: local m ye sab cheeze internet se aati h..jenkins m artifactory se
         
         ARTIFACTORY_CREDS = credentials('ARTIFACTORY_CREDENTIALS') //fetching credentials of artifactory from jenkins store using credentials() method of jenkins and storing them in ARTIFACTORY_CREDS variable...so that test jenkins artifactory se dependencies la paye and test reports ko artifactory pr store kra paye
         GIT_AUTH = credentials('GIT_USER')                         //similarly, fetching crdentials of bitbucket..so that jenkins bitbucket access krke wahan se code laakr job chala paye...ye credentials devops team bnati h for jenkins job only..these are different from our normal bitbucket credentials
