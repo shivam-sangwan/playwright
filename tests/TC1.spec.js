@@ -63,12 +63,6 @@ test.only('verify user login', async ({page})=>
     //..is command se hum chrome browser choose kr rhe h..to test case chrome pr run honge with chrome configrations.
     //npx playwright show-report: command to see html report of test ececution
 
-
-    //report issue
-    //lsof -i :9323
-    //kill -9 38794
-
-
     
     //integrating allure report with playwright:
 

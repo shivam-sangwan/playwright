@@ -9,7 +9,8 @@ test('verify ui actions' , async ({page})=>
          const dropDown = await page.locator('select.form-control'); //loacting dropdown...css: tagname.class
          await dropDown.selectOption('consult'); //seleting consult option from dropdown using value of 'value' attribute..similar to selectbyValue()
 
-         // Get all option elements from the dropdown and storing in array
+         // Get all option elements from the dropdown and storing in array...all 'option' elements are child of element having class 'form-control'
+         //all(): returns array of all elements matching the locator
          const options = await dropDown.locator('.form-control option').all();
 
 

@@ -22,6 +22,11 @@ test('@Regression verify dynamc waits' , async ({page})=>    //title m @Regressi
          except(text).toBe('ZARA COAT 3');
          const text2 =  await page.locator('.card_body b').allTextContents();
          console.log(text2);
+
+
+        //await vs waitfor():
+        //waitFor() Defines what to wait for > wait till element is properly loaded and visible
+        //await Tells JS to actually wait
          
 
 
@@ -35,7 +40,7 @@ test('@Regression verify dynamc waits' , async ({page})=>    //title m @Regressi
          //open playwright inspector > click on 'pick locator' icon > click on desired element > 
          // > come back to inspector > locator will be autopopulated in a search window
 
-         //npx playwright codegen http:/google.com: this will open google along with 'playwright instructor'
+         //npx playwright codegen google.com: this will open google along with 'playwright instructor'
          //..and whatever actions we now perform on google..their script will automatically be generated 
          //..from instructor..we can copy paste this script and create a new test case..this is called 'Record and Playback'
     }
