@@ -99,7 +99,5 @@ test('@Webst Client App login', async ({ page }) => {
     expect(orderId.includes(orderIdDetails)).toBe(true);  //checking if our orderid mentioned there is correct
 
 
-    //Note: whenever we route to a page after clicking on a button or something then..if method mentioned 
-    //..in first line of code for that page does not have autowait capability..
-    //..then we have to use waitForUrl('url of routed page)
+
  });
