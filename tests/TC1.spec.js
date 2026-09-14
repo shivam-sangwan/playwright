@@ -57,11 +57,6 @@ test.only('verify user login', async ({page})=>
     console.log(t3);
 
 
-    //if test runner file contains multiple browsers and we want to run our cases on chrome then use command:
-    //npx playwright test --project=chromium...to run test cases...playwright ke config file m..
-    //..project array m multiple browsers mentioned h..har browser ke 'use:' section m uski configrations h...
-    //..is command se hum chrome browser choose kr rhe h..to test case chrome pr run honge with chrome configrations.
-    //npx playwright show-report: command to see html report of test ececution
 
     
     //integrating allure report with playwright:
