@@ -2,6 +2,9 @@ import {test,expect} from '@playwright/test';
 
 test('child windows' , async ({browser})=>  //we used 'browser' fixture instead of 'page' fixture as we have to work on multiple pages/tabs
     {
+        
+        //topics: pages, promise all, getting sendekys text
+        
         //switching pages
         const context = await browser.newContext();  
         const page = await context.newPage(); //page1...opening a tab is browser
