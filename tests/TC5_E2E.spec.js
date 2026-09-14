@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
 
+//topics: locator chaining, for loop, dynamic dropdown, table code
+
 //E2E automation to login on app and purchase a product(zara coat)
 test('@Webst Client App login', async ({ page }) => {
     //js file- Login js, DashboardPage
@@ -56,7 +58,7 @@ test('@Webst Client App login', async ({ page }) => {
 
     //location and storing entire dropdown with all options
     const dropdown = page.locator(".ta-results"); //will work even if all options are yet to be loaded, bcoz base structure of dd is loaded
-    await dropdown.waitFor(); //wait for dropdown options to fully loaded on ui
+    await dropdown.first().waitFor({ state: 'visible' }); //wait for first dropdown option to fully loaded on ui
 
     //storing all dropdown options count 
     const optionsCount = await dropdown.locator("button").count();
@@ -99,9 +101,5 @@ test('@Webst Client App login', async ({ page }) => {
 
     //Note: whenever we route to a page after clicking on a button or something then..if method mentioned 
     //..in first line of code for that page does not have autowait capability..
-    //..then we have to use waitfor() to wait till all elements of that page are loaded
-    //ex: after clicking on 'view button' in line 92 we landed on view details page, but in first line of 
-    //..code for that page i.e. line 96, there is textContent(), which have autowait capability > so no need for waitFor()
-    //..but after clicking in line 84...we landed on orders page...first method: count() don't have autowait capability
-    //...so we used waitFor()
+    //..then we have to use waitForUrl('url of routed page)
  });
