@@ -8,28 +8,18 @@ test('@Regression verify dynamc waits' , async ({page})=>    //title m @Regressi
          await page.locator('[type="submit"]').click();
          
          await page.waitForLoadState('networkidle'); 
-         //signIn button click ke baad sare api calls hokar...
-         //..page load hone tk wait krega
-
-         //ager upar wait nhi lgate to allTextContents() empty array de deta..same reason ki wajah se waitFor() wali line bhi use ki h
-
-         //another way to wait for an element:
-         //await page.locator('.card_body b').waitFor();  //this will wait till located element is fully loaded
-         //waitfor() only works with locators which returns only single element..
-         //..so updating above wait: 
-        
-         const text = await page.locator('.card_body b').first().waitFor();
+         const text = await page.locator('.card_body b').first()
          except(text).toBe('ZARA COAT 3');
          const text2 =  await page.locator('.card_body b').allTextContents();
          console.log(text2);
 
 
-        //await vs waitfor():
-        //waitFor() Defines what to wait for > wait till element is properly loaded and visible
-        //await Tells JS to actually wait
+        //if test runner file contains multiple browsers and we want to run our cases on chrome then use command:
+        //npx playwright test --project=chromium...to run test cases...playwright ke config file m..
+        //..project array m multiple browsers mentioned h..har browser ke 'use:' section m uski configrations h...
+        //..is command se hum chrome browser choose kr rhe h..to test case chrome pr run honge with chrome configrations.
+        //npx playwright show-report: command to see html report of test ececution
          
-
-
          //npx playwright test: runs all classes in tests folder
          //npx playwright test --grep @Regression: runs only those test cases from all classes jinke title m @Regression ho
          //npx playwright test /tests/TC2.spec.js: runs specified file(TC2.spec.js) of tests folder
