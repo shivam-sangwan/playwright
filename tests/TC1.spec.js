@@ -48,11 +48,13 @@ test.only('verify user login', async ({page})=>
     const t2 = await page.locator('.card-title a').nth(1).textContent(); //getting text of 2nd element 
     console.log(t1);
     console.log(t2);
-    
-    const t3 = await page.locator('.card-title a').allTextContents(); //getting text of all elements located by this locator
+
+    const cards = page.locator('.card-title a');
+    await cards.first().waitFor({ state: 'visible' });
+    const t3 = cards.allTextContents(); //getting text of all elements located by this locator
     //Note: allTextContents() array of elements return krta h...to playwright wait nhi krta for..
     //..this function..bcoz pta ni hota ki kitne elements ke liye wait krna h..ager empty array bhi mila to print kr dega use hi
-    //..isliye use 'await page.locator('.card-title a').first().textContent();' before this..taaki elements load ho jaye..nhi to ye empty array return kr dega
+    //..isliye use 'await cards.first().waitFor({ state: 'visible' });' before this..taaki elements load ho jaye..nhi to ye empty array return kr dega
 
     console.log(t3);
 
