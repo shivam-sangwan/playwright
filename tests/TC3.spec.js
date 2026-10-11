@@ -4,6 +4,12 @@ test('verify ui actions' , async ({page})=>
     {
          await page.goto('http://www.rahulshettyacademy.com/loginpagePractise/');
 
+            //now lets try to print the value entered in inputBox
+           console.log(page.locator('#userEmail').textContent());  //it will return blank as value enterd in inputbox was initially not part of dom
+    
+           //solution to above
+           console.log(page.locator('#userEmail').inputValue()); //inputValue(): function used to read value entered in inputbox
+
          //dealing with static dropdown
          //selecting one value from dropdown
          const dropDown = await page.locator('select.form-control'); //loacting dropdown...css: tagname.class
