@@ -3,7 +3,7 @@ import {test,expect} from '@playwright/test';
 test('child windows' , async ({browser})=>  //we used 'browser' fixture instead of 'page' fixture as we have to work on multiple pages/tabs
     {
         
-        //topics: pages, promise all, getting sendekys text
+        //topics: pages, promise all
         
         //switching pages
         const context = await browser.newContext();  
@@ -51,11 +51,7 @@ test('child windows' , async ({browser})=>  //we used 'browser' fixture instead 
        await pages[0].locator('#userEmail').fill(text2); //perent page is pages[0]...child page = pages[1]
        
 
-       //now lets try to print the value entered in inputBox
-       console.log(page.locator('#userEmail').textContent());  //it will return blank as value enterd in inputbox was initially not part of dom
-
-       //solution to above
-       console.log(page.locator('#userEmail').inputValue()); //inputValue(): function used to read value entered in inputbox
+       
     }
 )
  
