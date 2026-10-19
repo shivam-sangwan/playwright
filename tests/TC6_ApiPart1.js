@@ -75,7 +75,7 @@ test('@Webst Client App login', async ({ page }) => {
 
      //storing tokn in local storage, before browser gets loaded,to skip login from ui each time
       await page.addInitScript( value => {              //page.addInitScript(): code provided in this method runs brfore the page is loaded
-         window.localStorage.setItem('token',value);    //setting key: 'token' and value in local storage of browser
+         localStorage.setItem('token',value);    //setting key: 'token' and value in local storage of browser
        }, tokn);                                        //here 'tokn' is getting passed as value to 'token' key
 
       //before writting above code ask developer where to store token?...session storage or local storage
